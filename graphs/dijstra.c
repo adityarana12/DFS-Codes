@@ -99,10 +99,14 @@ int main() {
     addEdge(graph, 3, 5, 7);
     addEdge(graph, 4, 5, 9);
 
-    int startVertex = 0;  // 'a'
-    int endVertex = 5;    // 'f'
+  int startVertex = 0;  // 'a'
 
-    dijkstra(graph, startVertex, endVertex);
+    for (int endVertex = 0; endVertex < graph->vertices; endVertex++) {
+        if (endVertex != startVertex) {
+            dijkstra(graph, startVertex, endVertex);
+            printf("-----------------\n");
+        }
+    }
 
     return 0;
 }
